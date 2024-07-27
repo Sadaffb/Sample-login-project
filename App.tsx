@@ -1,32 +1,18 @@
-import React from 'react';
+import React , {Component, useState} from 'react';
 import "./style.css";
-import {BrowserRouter, Route, Router, Routes, useNavigate ,useParams} from 'react-router-dom';
-import { Password } from './password';
+import {BrowserRouter, Route, Routes ,Link, useNavigate } from 'react-router-dom';
+import { Password } from './components/password';
+import { Login } from './components/login';
 
-
-function Root(){const navigate = useNavigate()
+export const App = () => {
   
-  const gotToNewPage=()=>{
-    navigate("/Password");
-  }
 return (
-  <div className="main_div">
-          <div className='main_title'> ورود | ثبت نام</div>
-          <div className='description'>لطفا شماره موبایل خود را وارد کنید</div>
-          <input className="box_style_phone_number" type="text" placeholder="شماره موبایل"/>
-          <button typeof='' className="button_style_login" 
-          onClick={() => gotToNewPage()}>ثبت</button>
-              <Routes>
-              <Route path="/password" element={<Password />} />
-              </Routes>
-  </div>
+  <BrowserRouter>
+    < Routes >
+      <Route  path="/"  element={<Login />} />
+      <Route path = "/component/password" element ={< Password />} />
+    </ Routes >
+  </BrowserRouter> 
+  
 );
 }
-export const App = () => {
-  return (
-    <BrowserRouter>
-      <Root />
-    </BrowserRouter>    
-  );
-}
-
