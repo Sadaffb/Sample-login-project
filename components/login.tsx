@@ -1,7 +1,6 @@
-import React , {Component, useState} from 'react';
+import React , { useState} from 'react';
 import "../style.css";
-import {Route, Routes ,Link, useNavigate } from 'react-router-dom';
-import { Password } from './password';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -15,7 +14,7 @@ export const Login =()=>{
 
     return(
         < div className = "main_div" >
-        < div className = 'main_title' > ورود | ثبت نام </ div >
+        <div className='main_title'>ورود | ثبت نام</div>
         < div className = 'description' > لطفا شماره موبایل خود را وارد کنید</ div >
         < input id = 'phonenumber' className = "box_style_phone_number" type = "text"
         placeholder = "شماره موبایل" value ={ phoneNumber}
